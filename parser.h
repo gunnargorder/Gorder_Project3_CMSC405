@@ -1,5 +1,5 @@
 // CMSC 405 Computer Graphics
-// Project 2
+// Project 3
 // Duane J. Jarc
 // August 1, 2013
 
@@ -16,6 +16,7 @@ private:
 	void parseGraphics(Scene& scene, Token graphicToken);
 	void parseTransformations(vector<Transformation*>& transformations);
 	GLdouble* getNumberList(GLint count);
+	GLint* getSteps();
 	void verifyNextToken(Token expectedToken);
 	void verifyCurrentToken(Token expectedToken);
 	void syntaxError(string);

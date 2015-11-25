@@ -1,5 +1,5 @@
 // CMSC 405 Computer Graphics
-// Project 2
+// Project 3
 // Duane J. Jarc
 // August 1, 2013
 
@@ -13,8 +13,6 @@ Parser::Parser(string fileName)
 {
 	lexer = Lexer(fileName);
 }
-
-// Parses the production
 
 // scene -> SCENE IDENTIFIER number_list graphics END '.'
 
@@ -96,7 +94,7 @@ void Parser::parseGraphics(Scene& scene, Token graphicToken)
 	else
 	{
 		stringstream message;
-		message << "Line: " << lexer.getLineNo() <<  "Unexpecting graphic name " << tokenNames[graphicToken];
+		message << "Line: " << lexer.getLineNo() <<  " Unexpected graphic name " << tokenNames[graphicToken];
 		throw SyntaxError(message.str());
 	}
 	token = lexer.getNextToken();
@@ -107,13 +105,16 @@ void Parser::parseGraphics(Scene& scene, Token graphicToken)
 // Parses the following productions
 
 // transformations -> transformation transformations | transformation
-// transformation -> rotation | scaling | translation
+// transformation -> action steps
+// action -> rotation | scaling | translation
 // rotation -> ROTATE ANGLE NUMBER ';'
 // scaling -> SCALE number_list ';'
 // translation -> TRANSLATE number_list ';'
 
 void Parser::parseTransformations(vector<Transformation*>& transformations)
 {
+	GLint* steps;
+	GLdouble angle;
 	GLdouble* numberPair;
 
 	switch (token)
@@ -121,21 +122,46 @@ void Parser::parseTransformations(vector<Transformation*>& transformations)
 		case ROTATE:
 			verifyNextToken(ANGLE);
 			verifyNextToken(NUMBER);
-			transformations.push_back(new Rotation(lexer.getNumber()));
+			angle = lexer.getNumber();
+			steps = getSteps();
+			transformations.push_back(new Rotation(angle, steps[0], steps[1]));
 			break;
 		case SCALE:
 			numberPair = getNumberList(2);
-			transformations.push_back(new Scaling(numberPair[0], numberPair[1]));
+			steps = getSteps();
+			transformations.push_back(new Scaling(numberPair[0], numberPair[1], steps[0], steps[1]));
 			break;
 		case TRANSLATE:
 			numberPair = getNumberList(2);
-			transformations.push_back(new Translation(numberPair[0], numberPair[1]));
+			steps = getSteps();
+			transformations.push_back(new Translation(numberPair[0], numberPair[1], steps[0], steps[1]));
 			break;
 	}
-	verifyNextToken(SEMICOLON);
+	verifyCurrentToken(SEMICOLON);
 	token = lexer.getNextToken();
 	if (token != END)
 		parseTransformations(transformations);
+}
+
+// Parses the follwoing production
+
+// steps -> STEP NUMBER TO NUMBER  ';' | ';'
+
+GLint* Parser::getSteps()
+{
+	GLint* steps = new GLint[2];
+	steps[0] = steps[1] = 0;
+	token = lexer.getNextToken();
+	if (token == STEP)
+	{
+		verifyNextToken(NUMBER);
+		steps[0] = (GLint)lexer.getNumber();
+		verifyNextToken(TO);
+		verifyNextToken(NUMBER);
+		steps[1] = (GLint)lexer.getNumber();
+		token = lexer.getNextToken();
+	}
+	return steps;
 }
 
 // Parses the following productions
