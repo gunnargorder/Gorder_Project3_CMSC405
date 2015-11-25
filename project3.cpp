@@ -30,6 +30,23 @@ void resizeWindow(GLint newWidth, GLint newHeight)
 	glClear(GL_COLOR_BUFFER_BIT);  
 }
 
+//listens and responds to input from the keyboard
+void keyboard(unsigned char key, int x, int y)
+{
+	switch (key) {
+	case 'r':
+	case 'R':
+		break;
+	case 27:  /*  Escape Key  */
+		exit(0);
+		break;
+	default:
+		break;
+	}
+}
+
+
+
 // The main function of the whole program, which requires the name of the scene definition file as a command line argument
 // It calls the parser to parse the scene definition file and add he graphic objects to the scene,
 // and then it creates the drawing window and registers the callback function for draing the window and resizing it
@@ -49,6 +66,7 @@ void main (GLint argc, char** argv)
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	scene.createWindow();
+	//glutKeyboardFunc(keyboard);
 	glutDisplayFunc(draw);
 	glutReshapeFunc(resizeWindow);
 	glutMainLoop();
