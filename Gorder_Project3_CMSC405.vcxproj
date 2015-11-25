@@ -97,6 +97,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\%40CMSC_405-ComputerGraphics\Week6-Project3\Gorder_Project3_CMSC405\animator.cpp" />
     <ClCompile Include="convexpolygon.cpp" />
     <ClCompile Include="graphic.cpp" />
     <ClCompile Include="isoscelestriangle.cpp" />
@@ -112,6 +113,7 @@
     <ClCompile Include="translation.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\%40CMSC_405-ComputerGraphics\Week6-Project3\Gorder_Project3_CMSC405\animator.h" />
     <ClInclude Include="convexpolygon.h" />
     <ClInclude Include="graphic.h" />
     <ClInclude Include="isoscelestriangle.h" />

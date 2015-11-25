@@ -54,6 +54,9 @@
     <ClCompile Include="translation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\..\%40CMSC_405-ComputerGraphics\Week6-Project3\Gorder_Project3_CMSC405\animator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="convexpolygon.h">
@@ -108,6 +111,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="types.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\%40CMSC_405-ComputerGraphics\Week6-Project3\Gorder_Project3_CMSC405\animator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

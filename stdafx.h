@@ -37,6 +37,7 @@ class Transformation;
 #include "rotation.h"
 #include "scaling.h"
 #include "translation.h"
+#include "animator.h"
 
 #include "scene.h"
 #include "syntax.h"
