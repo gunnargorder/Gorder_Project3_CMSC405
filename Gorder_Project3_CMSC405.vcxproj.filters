@@ -33,9 +33,6 @@
     <ClCompile Include="parser.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="project2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="regularpolygon.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -55,6 +52,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\%40CMSC_405-ComputerGraphics\Week6-Project3\Gorder_Project3_CMSC405\animator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="project3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -104,7 +104,7 @@
     <ClCompile Include="lexer.cpp" />
     <ClCompile Include="parallelogram.cpp" />
     <ClCompile Include="parser.cpp" />
-    <ClCompile Include="project2.cpp" />
+    <ClCompile Include="project3.cpp" />
     <ClCompile Include="regularpolygon.cpp" />
     <ClCompile Include="rotation.cpp" />
     <ClCompile Include="scaling.cpp" />
