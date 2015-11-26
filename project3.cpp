@@ -44,6 +44,25 @@ void keyboard(unsigned char key, int x, int y)
 		break;
 	}
 }
+//left mouse starts the animation
+// Right mouse stops the animation
+void mouseFcn(GLint button, GLint action, GLint x, GLint y)
+{
+
+	switch (button) {
+	case GLUT_LEFT_BUTTON:         //  Start the animation. 
+		if (action == GLUT_DOWN)
+			//glutIdleFunc(rotateHex);  //change for the animation function
+		break;
+	case GLUT_RIGHT_BUTTON:          //  Stop the animation. 
+		if (action == GLUT_DOWN)
+			glutIdleFunc(NULL);
+		break; 
+	default:
+		break;
+
+	}
+}
 
 
 
@@ -66,7 +85,8 @@ void main (GLint argc, char** argv)
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	scene.createWindow();
-	//glutKeyboardFunc(keyboard);
+	glutMouseFunc(mouseFcn);
+	glutKeyboardFunc(keyboard);
 	glutDisplayFunc(draw);
 	glutReshapeFunc(resizeWindow);
 	glutMainLoop();
