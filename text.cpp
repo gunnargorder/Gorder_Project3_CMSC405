@@ -31,7 +31,9 @@ void Text::draw()
 	{
 		glutBitmapCharacter(GLUT_BITMAP_9_BY_15, strDisplay[i]);
 	}
-
+	string step = to_string(Animator::getCurrent());
+	for each (char ch in step)
+		glutBitmapCharacter(GLUT_BITMAP_9_BY_15, ch);
 }
 
 

@@ -10,6 +10,8 @@
 // Global variable that defines the scene object
 
 static Scene scene;
+#define SLEEPMS 100
+
 
 // Function that is called each time the window is drawn
 
@@ -30,12 +32,26 @@ void resizeWindow(GLint newWidth, GLint newHeight)
 	glClear(GL_COLOR_BUFFER_BIT);  
 }
 
+void animate(void)
+{
+	Animator::animate();
+}
+
 //listens and responds to input from the keyboard
 void keyboard(unsigned char key, int x, int y)
 {
 	switch (key) {
+	case 's':
+	case 'S':
+		Animator::start();  //change for the animation function
+		break;
+	case 'p':
+	case 'P':
+		Animator::pause();
+		break;
 	case 'r':
 	case 'R':
+		Animator::reset();
 		break;
 	case 27:  /*  Escape Key  */
 		exit(0);
@@ -52,7 +68,7 @@ void mouseFcn(GLint button, GLint action, GLint x, GLint y)
 	switch (button) {
 	case GLUT_LEFT_BUTTON:         //  Start the animation. 
 		if (action == GLUT_DOWN)
-			//glutIdleFunc(rotateHex);  //change for the animation function
+			glutIdleFunc(animate);  //change for the animation function
 		break;
 	case GLUT_RIGHT_BUTTON:          //  Stop the animation. 
 		if (action == GLUT_DOWN)
@@ -63,8 +79,6 @@ void mouseFcn(GLint button, GLint action, GLint x, GLint y)
 
 	}
 }
-
-
 
 // The main function of the whole program, which requires the name of the scene definition file as a command line argument
 // It calls the parser to parse the scene definition file and add he graphic objects to the scene,
@@ -83,7 +97,7 @@ void main (GLint argc, char** argv)
 		cout << error.what() << endl;
 	}
 	glutInit(&argc, argv);
-	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGB);
+	glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB);
 	scene.createWindow();
 	glutMouseFunc(mouseFcn);
 	glutKeyboardFunc(keyboard);
