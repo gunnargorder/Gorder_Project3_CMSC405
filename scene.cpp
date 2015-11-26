@@ -11,7 +11,7 @@
 
 Scene::Scene(string name, GLint height, GLint width)
 {
-	this->name = name;
+	this->name = name + "Gorder - Project 3 - CMSC 405";
 	this->height = height;
 	this->width = width;
 }

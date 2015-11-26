@@ -37,11 +37,11 @@ Parallelogram::Parallelogram(vector<Transformation*> transformations, Color colo
 
 }
 
-// The draw method calls the parent class draw method directly
-void Parallelogram::draw()
-{
-	ConvexPolygon::draw();
-}
+//// The draw method calls the parent class draw method directly
+//void Parallelogram::draw()
+//{
+//	ConvexPolygon::draw();
+//}
 
 void Parallelogram::translate(GLdouble translateX, GLdouble translateY)
 {

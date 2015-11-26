@@ -55,7 +55,7 @@ IsoscelesTriangle::IsoscelesTriangle(vector<Transformation*> transformations, Co
 }
 
 // The draw method calls the parent class draw method directly
-void IsoscelesTriangle::draw()
-{
-	ConvexPolygon::draw();
-}
+//void IsoscelesTriangle::draw()
+//{
+//	ConvexPolygon::draw();
+//}

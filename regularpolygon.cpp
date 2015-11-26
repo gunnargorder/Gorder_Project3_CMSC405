@@ -32,8 +32,8 @@ RegularPolygon::RegularPolygon(vector<Transformation*> transformations, Color co
 
 }
 
-// The draw method calls the parent class draw method directly
-void RegularPolygon::draw()
-{
-	ConvexPolygon::draw();
-}
+//// The draw method calls the parent class draw method directly
+//void RegularPolygon::draw()
+//{
+//	ConvexPolygon::draw();
+//}
