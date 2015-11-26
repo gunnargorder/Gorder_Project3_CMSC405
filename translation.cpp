@@ -2,7 +2,7 @@
 
 
 
-Translation::Translation(GLdouble x, GLdouble y) : Transformation()
+Translation::Translation(GLdouble x, GLdouble y, GLint startStep, GLint endStep) : Transformation()
 {
 	this->x = x;
 	this->y = y;

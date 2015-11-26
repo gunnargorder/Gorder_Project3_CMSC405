@@ -2,7 +2,7 @@
 #include "stdafx.h"
 
 
-Rotation::Rotation(GLdouble angle) : Transformation()
+Rotation::Rotation(GLdouble angle, GLint startStep, GLint endStep) : Transformation()
 {
 	this->angle = angle;
 }
