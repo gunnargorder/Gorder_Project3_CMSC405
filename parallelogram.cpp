@@ -14,7 +14,7 @@ Parallelogram::Parallelogram(vector<Transformation*> transformations, Color colo
 	this->numV = 4;
 	this->angle = angle;
 	this->transformations = transformations;
-	GLdouble sideLength = 10.0;
+	GLdouble sideLength = 10;
 
 	this->startingPoint = { 0, 0 };
 

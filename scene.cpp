@@ -9,9 +9,10 @@
 
 // Constructor that must be supplied the height and width of the drawing window for the scene
 
+
 Scene::Scene(string name, GLint height, GLint width)
 {
-	this->name = name + "Gorder - Project 3 - CMSC 405";
+	this->name = name + " - Gorder - Project 3 - CMSC 405";
 	this->height = height;
 	this->width = width;
 }

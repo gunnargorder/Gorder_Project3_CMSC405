@@ -45,7 +45,9 @@ void ConvexPolygon::draw()
 	glNewList(regHex, GL_COMPILE);
 	glPushMatrix();
 	for (vector<Transformation*>::iterator iterator = transformations.begin(); iterator != transformations.end(); iterator++)
+	{
 		(*iterator)->transform(this);
+	}
 	colorDrawing();
 	glBegin(GL_POLYGON);
 	for (std::vector<int>::size_type i = 0; i != pointsList.size(); i++) {

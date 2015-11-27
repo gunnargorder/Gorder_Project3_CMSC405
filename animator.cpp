@@ -32,16 +32,19 @@ GLboolean Animator::isAnimeRunning()
 
 void Animator::start()
 {
+	animRunning = true;
 	glutIdleFunc(animate);
 }
 
 void Animator::pause()
 {
+	animRunning = false;
 	glutIdleFunc(NULL);
 }
 
 void Animator::reset()
 {
+	animRunning = false;
 	currentStep = 0;
 	glutIdleFunc(NULL);
 	glutPostRedisplay();

@@ -37,7 +37,7 @@ IsoscelesTriangle::IsoscelesTriangle(vector<Transformation*> transformations, Co
 {
 		this->numV = 3;
 		this->height = 10;
-		this->width = (tan(angle));
+		this->width = (tan(angle * (M_PI / 180))) * this->height;
 		this->startingPoint = { 0, 10 };
 		this->transformations = transformations;
 	
