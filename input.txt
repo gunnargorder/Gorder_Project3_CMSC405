@@ -1,3 +1,7 @@
-Scene Polygons (500, 500)
-	  Text Color(0.0, 0.0, 0.0) at (-200., 200.) "Hello World";
+Scene Polygons (700, 700)
+	  RegularPolygon Color(1.0, 0.0, 0.0) Sides 4;
+	    Scale (5.0, 5.0);
+	    Rotate Angle 36.0 Step 91 to 100;
+	  End
+	  Text Color(0.0, 0.0, 0.0) at (5.0, 150.) "Hello World";
 	End.

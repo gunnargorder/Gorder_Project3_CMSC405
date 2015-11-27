@@ -68,12 +68,16 @@ void mouseFcn(GLint button, GLint action, GLint x, GLint y)
 	switch (button) {
 	case GLUT_LEFT_BUTTON:         //  Start the animation. 
 		if (action == GLUT_DOWN)
-			glutIdleFunc(animate);  //change for the animation function
+			Animator::start(); 
 		break;
 	case GLUT_RIGHT_BUTTON:          //  Stop the animation. 
 		if (action == GLUT_DOWN)
-			glutIdleFunc(NULL);
+			Animator::pause();
 		break; 
+	case GLUT_MIDDLE_BUTTON:         //  Stop the animation. 
+		if (action == GLUT_DOWN)
+			Animator::reset();
+		break;
 	default:
 		break;
 

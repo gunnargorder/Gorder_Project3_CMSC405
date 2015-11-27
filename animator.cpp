@@ -2,10 +2,8 @@
 #include "stdafx.h"
 #define SLEEPMS 100
 GLint Animator::currentStep = 0;
+GLboolean Animator::animRunning = false;
 
-Animator::Animator()
-{
-}
 
 void Animator::animate()
 {
@@ -25,6 +23,11 @@ void Animator::step()
 GLint Animator::getCurrent()
 {
 	return currentStep;
+}
+
+GLboolean Animator::isAnimeRunning()
+{
+	return animRunning;
 }
 
 void Animator::start()

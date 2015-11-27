@@ -36,9 +36,9 @@
 IsoscelesTriangle::IsoscelesTriangle(vector<Transformation*> transformations, Color color, GLdouble angle):ConvexPolygon(transformations, color)
 {
 		this->numV = 3;
-		this->height = 1;
+		this->height = 10;
 		this->width = (tan(angle));
-		this->startingPoint = { 0, 1 };
+		this->startingPoint = { 0, 10 };
 		this->transformations = transformations;
 	
 		Point point2;	

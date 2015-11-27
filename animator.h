@@ -2,11 +2,11 @@
 class Animator
 {
 public:
-	Animator();
 	static void animate();
 	static void step();
 	static GLint getCurrent();
 	//is an animation running
+	static GLboolean isAnimeRunning();
 	//start animation
 	static void start();
 	//pause animation
@@ -15,6 +15,6 @@ public:
 	static void reset();
 private:
 	static GLint currentStep;
-
+	static GLboolean animRunning;
 };
 
