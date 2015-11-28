@@ -18,8 +18,10 @@ void Scaling::transform(ConvexPolygon * polygon) const
 
 
 	//if currentStep is < starting step no transformation
-
-	if ((currentStep >= this->startStep) && (currentStep <= this->endStep)) {
+	if (currentStep < this->startStep) {
+		return;
+	} 
+	else 	if ((currentStep >= this->startStep) && (currentStep <= this->endStep)) {
 		//if current step is greater than starting step and less than ending step calculate transformation
 		//rotAngle = this->angle * (currentStep - this->startStep + 1);
 		x2 = this->x * (currentStep - this->startStep + 1);

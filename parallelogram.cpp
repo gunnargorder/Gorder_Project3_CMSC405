@@ -19,21 +19,21 @@ Parallelogram::Parallelogram(vector<Transformation*> transformations, Color colo
 	this->startingPoint = { 0, 0 };
 
 	Point point4;
-	point4.x = this->startingPoint.x + sideLength;
-	point4.y = this->startingPoint.y;
+	point4.x = sideLength;
+	point4.y = 0;
 
 	Point point3;
-	point3.x = point4.x + cos(this->angle)*sideLength;
-	point3.y = sin(this->angle)*sideLength;
+	point3.x = cos(this->angle * (M_PI / 180))*sideLength + sideLength;
+	point3.y = sin(this->angle * (M_PI / 180))*sideLength;
 
 	Point point2;
-	point2.x = this->startingPoint.x + cos(this->angle)*sideLength;
-	point2.y = sin(this->angle)*sideLength;
+	point2.x = cos(this->angle * (M_PI/180))*sideLength;
+	point2.y = sin(this->angle * (M_PI / 180))*sideLength;
 
 	this->pointsList.push_back(this->startingPoint);
-	this->pointsList.push_back(point4);
-	this->pointsList.push_back(point3);
 	this->pointsList.push_back(point2);
+	this->pointsList.push_back(point3);
+	this->pointsList.push_back(point4);
 
 }
 

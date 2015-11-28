@@ -35,23 +35,23 @@
 //}
 IsoscelesTriangle::IsoscelesTriangle(vector<Transformation*> transformations, Color color, GLdouble angle):ConvexPolygon(transformations, color)
 {
-		this->numV = 3;
-		this->height = 10;
-		this->width = (tan(angle * (M_PI / 180))) * this->height;
-		this->startingPoint = { 0, 10 };
-		this->transformations = transformations;
-	
-		Point point2;	
-		point2.x = this->startingPoint.x + (this->width);
-		point2.y = this->startingPoint.y - this->height;
-	
-		Point point3;
-		point3.x = this->startingPoint.x - (this->width);
-		point3.y = this->startingPoint.y - this->height;
-	
-		this->pointsList.push_back(point3);
-		this->pointsList.push_back(point2);
-		this->pointsList.push_back(this->startingPoint);
+	this->numV = 3;
+	this->height = 1;
+	this->width = (tan(angle));
+	this->startingPoint = { 0, 1 };
+	this->transformations = transformations;
+
+	Point point2;
+	point2.x = this->startingPoint.x + (this->width);
+	point2.y = this->startingPoint.y - this->height;
+
+	Point point3;
+	point3.x = this->startingPoint.x - (this->width);
+	point3.y = this->startingPoint.y - this->height;
+
+	this->pointsList.push_back(this->startingPoint);
+	this->pointsList.push_back(point2);
+	this->pointsList.push_back(point3);
 }
 
 // The draw method calls the parent class draw method directly
