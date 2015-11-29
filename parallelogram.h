@@ -1,13 +1,15 @@
+// CMSC 405 Computer Graphics
+// Project 2
+// Duane J. Jarc
+// August 1, 2013
 
-class Parallelogram : public ConvexPolygon
+// Class definition for parallelogram class
+
+class Parallelogram: public ConvexPolygon
 {
 public:
 	Parallelogram(vector<Transformation*> transformations, Color color, GLdouble angle);
-	/*virtual void draw() override;*/
-	virtual void translate(GLdouble translateX, GLdouble translateY) override;
-	virtual void rotate(GLdouble angle) override;
-	virtual void scale(GLdouble scaleX, GLdouble scaleY) override;
-protected:
-	GLdouble angle;
+	void translate(GLdouble translateX, GLdouble translateY) override;
+	void rotate(GLdouble angle) override;
+	void scale(GLdouble scaleX, GLdouble scaleY) override;
 };
-

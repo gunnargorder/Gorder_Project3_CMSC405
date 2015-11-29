@@ -1,10 +1,12 @@
+// CMSC 405 Computer Graphics
+// Project 2
+// Duane J. Jarc
+// August 1, 2013
 
-class RegularPolygon : public ConvexPolygon
+// Class definition for regular polygon class
+
+class RegularPolygon: public ConvexPolygon
 {
 public:
-	RegularPolygon(vector<Transformation*> transformations, Color color, GLint vertices);
-	/*virtual void draw() override;*/
-protected:
-	GLint radius;
+	RegularPolygon(vector<Transformation*> transformations, Color color, GLint vertexCount);
 };
-

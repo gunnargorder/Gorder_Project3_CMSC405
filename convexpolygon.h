@@ -1,19 +1,22 @@
+// CMSC 405 Computer Graphics
+// Project 2
+// Duane J. Jarc
+// August 1, 2013
+
+// Base class for all polygon classes
 
 class ConvexPolygon: public Graphic, public Transformable
 {
-protected:
-	//ConvexPolygon(Color color, Point startingPoint);
-	ConvexPolygon(vector<Transformation*> transformations, Color color);
-	virtual void draw() override;
-	Point startingPoint;
-	GLint numV;
-	std::vector<Point> pointsList;
-	GLint height;
-	GLint width;
-	std::vector<Transformation*> transformations;
 public:
-	virtual void translate(GLdouble translateX, GLdouble translateY);
-	virtual void rotate(GLdouble angle);
-	virtual void scale(GLdouble scaleX, GLdouble scaleY);
+	void draw() override;
+	void translate(GLdouble translateX, GLdouble translateY) override
+		{glTranslated(translateX, translateY, 0);}
+	void rotate(GLdouble angle)	override { glRotated(angle, 0.0, 0.0, 1.0); }
+	void scale(GLdouble scaleX, GLdouble scaleY) override { glScaled(scaleX, scaleY, 1.0); }
+protected:
+	ConvexPolygon(vector<Transformation*> transformations, Color color, GLint vertexCount);
+	~ConvexPolygon() {delete vertices;}
+	GLint vertexCount;
+	Point *vertices;
+	vector<Transformation*> transformations;
 };
-
