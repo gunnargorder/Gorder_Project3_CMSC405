@@ -21,7 +21,7 @@ void Scaling::transform(ConvexPolygon * polygon) const
 		if (currentStep < this->startStep) {
 			return;
 		} 
-		else 	if ((currentStep >= this->startStep) && (currentStep <= this->endStep)) {
+		else if ((currentStep >= this->startStep) && (currentStep <= this->endStep)) {
 			//if current step is greater than starting step and less than ending step calculate transformation
 
 			x2 = pow(this->x, (currentStep - this->startStep + 1));

@@ -57,9 +57,6 @@
     <ClCompile Include="project3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\%40CMSC_405-ComputerGraphics\Week6-Project3\Gorder_Project3_CMSC405\transformation.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="convexpolygon.h">
